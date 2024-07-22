@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AccountNumbers/AccountNumbers.iml" filepath="$PROJECT_DIR$/AccountNumbers/AccountNumbers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CreateAccount/CreateAccount.iml" filepath="$PROJECT_DIR$/CreateAccount/CreateAccount.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Lab7-1.iml" filepath="$PROJECT_DIR$/.idea/Lab7-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MoreMethods/MoreMethods.iml" filepath="$PROJECT_DIR$/MoreMethods/MoreMethods.iml" />
+    </modules>
+  </component>
+</project>
