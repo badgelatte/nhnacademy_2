@@ -8,17 +8,45 @@ public class BankAccount {
     //
     // To-do: Add AccountType variable here.
     //
+    private AccountType accountType;
 
     private static long nextAccountNumber;
 
     //
     // To-do: Add default constructor here
     //
+    public BankAccount(){
+        // this.accountNumber = nextNumber();
+        // this.accountType = AccountType.Checking;
+        // this.balance = new BigDecimal("0");
+        this("Unknown", new BigDecimal("0"), AccountType.Checking);
+    }
 
     //
     // To-do: Add the first overloaded constructor here
     //
+    public BankAccount(AccountType accountType) {
+        // this.accountNumber = nextNumber();
+        // this.ownerName = "Unknown";
+        // this.accountType = accountType;
+        // this.balance = new BigDecimal("0");
+        this("Unknown", new BigDecimal("0"), AccountType.Checking);
+    }
+    public BankAccount(String name, BigDecimal bigDecimal) {
+        // this.accountNumber = nextNumber();
+        // this.ownerName = name;
+        // this.accountType = AccountType.Checking;
+        // this.balance = bigDecimal;
+        this(name, bigDecimal, AccountType.Checking);
+    }
 
+    public BankAccount(String name, BigDecimal balance, AccountType accountType) {
+        this.accountNumber = nextNumber();
+        this.ownerName = name;
+        this.accountType = accountType;
+        this.balance = balance;
+    }
+ 
     private static long nextNumber() {
         return nextAccountNumber++;
     }
@@ -44,6 +72,9 @@ public class BankAccount {
     //
     // To-do: Add getAccountType method here.
     //
+    public String getAccountType() {
+        return accountType.toString();
+    }
     
     public BigDecimal deposit(BigDecimal amount) {
         this.balance = this.balance.add(amount);
@@ -65,17 +96,20 @@ public class BankAccount {
             this.deposit(amount);
         }
     }
+
 }
 
 class CreateAccount {
-    /*
     public static BankAccount createNewBankAccount(String ownerName, BigDecimal balance) {
         BankAccount newAccount = new BankAccount();
+        BankAccount account1 = new BankAccount(AccountType.Deposit);
+        BankAccount account2 = new BankAccount("James", new BigDecimal("100"));
+        BankAccount account3 = new BankAccount("Celine", new BigDecimal("100"), AccountType.Saving);
+        
         newAccount.setData(ownerName, balance);
 
         return newAccount;
     }
-    */
 
     public static void TestDeposit(BankAccount account) {
         Scanner scanner = new Scanner(System.in);
@@ -96,7 +130,15 @@ class CreateAccount {
     }
 
     public static void main(String[] args) {
+        BankAccount newAccount = new BankAccount();
+        BankAccount account1 = new BankAccount(AccountType.Deposit);
+        BankAccount account2 = new BankAccount("James", new BigDecimal("100"));
+        BankAccount account3 = new BankAccount("Celine", new BigDecimal("100"), AccountType.Saving);
         
+        printBankAccount(newAccount);
+        printBankAccount(account1);
+        printBankAccount(account2);
+        printBankAccount(account3);
     }
 
     public static void printBankAccount(BankAccount account) {
