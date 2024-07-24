@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/collections-framework-exercises" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/maven-exercises" vcs="Git" />
   </component>
 </project>
