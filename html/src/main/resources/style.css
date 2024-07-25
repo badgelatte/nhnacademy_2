@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+}
+.first {
+    flex: 1;
+}
+.section {
+    flex: 2;
+}

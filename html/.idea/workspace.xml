@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66c0bd64-8565-4129-92d5-68dc6951cdaf" name="Changes" comment="html first commit">
+    <list default="true" id="66c0bd64-8565-4129-92d5-68dc6951cdaf" name="Changes" comment="Java에서의 상속">
       <change beforePath="$PROJECT_DIR$/../collections-framework-exercises" beforeDir="false" afterPath="$PROJECT_DIR$/../collections-framework-exercises" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -71,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721780922332</updated>
       <workItem from="1721780923379" duration="364000" />
-      <workItem from="1721781296650" duration="6357000" />
+      <workItem from="1721781296650" duration="16846000" />
     </task>
     <task id="LOCAL-00001" summary="html first commit">
       <option name="closed" value="true" />
@@ -81,7 +81,31 @@
       <option name="project" value="LOCAL" />
       <updated>1721781859904</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="html 실습 이력서 만들기">
+      <option name="closed" value="true" />
+      <created>1721796214926</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721796214926</updated>
+    </task>
+    <task id="LOCAL-00003" summary="설정 바뀜">
+      <option name="closed" value="true" />
+      <created>1721796239149</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721796239149</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Java에서의 상속">
+      <option name="closed" value="true" />
+      <created>1721871053304</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721871053304</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,7 +113,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="html first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="html first commit" />
+    <MESSAGE value="html 실습 이력서 만들기" />
+    <MESSAGE value="설정 바뀜" />
+    <MESSAGE value="Java에서의 상속" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java에서의 상속" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
