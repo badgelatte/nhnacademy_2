@@ -1,4 +1,5 @@
-import java.util.Iterator;
+import dIterator.Department2;
+import dIterator.Student;
 
 public class ATest {
     public static void main(String[] args) {
@@ -22,6 +23,18 @@ public class ATest {
         // 할 수 았게 하려면 전부 iterator를 상속하면 된다
         for(Object o : list) {
             System.out.println(o);
+        }
+
+
+        Department2 department = new Department2(1, "Computer Engineering");
+        department.addStudent(new Student(1, "Celine"));
+        department.addStudent(new Student(2, "Bob"));
+        department.addStudent(new Student(3, "Robert"));
+
+        System.out.println(department.getDepartmentName());
+
+        for(Object s: department) {
+            System.out.println(s);
         }
     }
 }
