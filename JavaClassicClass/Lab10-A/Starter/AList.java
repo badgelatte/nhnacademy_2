@@ -1,4 +1,4 @@
-public interface AList extends AEnumerable{
+public interface AList extends Iterable{
     void add(Object item);
     Object get(int index);
     void remove(int index);

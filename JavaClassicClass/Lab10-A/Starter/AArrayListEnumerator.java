@@ -1,4 +1,6 @@
-public class AArrayListEnumerator implements AEnumerator {
+import java.util.Iterator;
+
+public class AArrayListEnumerator implements Iterator {
     AArrayList list;
     int index = 0;
 

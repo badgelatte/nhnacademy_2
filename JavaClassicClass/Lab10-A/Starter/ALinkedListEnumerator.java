@@ -1,4 +1,6 @@
-public class ALinkedListEnumerator implements AEnumerator {
+import java.util.Iterator;
+
+public class ALinkedListEnumerator implements Iterator {
     ALinkedList list;
 
     public ALinkedListEnumerator(ALinkedList list) {

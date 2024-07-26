@@ -1,6 +1,6 @@
 import java.util.Iterator;
 
-public interface AEnumerator extends Iterator {
+public interface AEnumerator {
     boolean hasNext();
     Object next();
 }

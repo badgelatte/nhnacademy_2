@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 class ANode {
     Object data;
     ANode nextNode;
@@ -48,7 +50,7 @@ public class ALinkedList implements AList {
     }
 
     @Override
-    public AEnumerator getEnumerator() {
+    public Iterator iterator() {
         return new ALinkedListEnumerator(this);
     }
 }

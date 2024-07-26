@@ -1,4 +1,4 @@
-public interface AEnumerable extends Iterable {
+public interface AEnumerable {
     AEnumerator getEnumerator();
 
 }

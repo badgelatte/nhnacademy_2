@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class AArrayList implements AList {
     private Object[] elements;
     private int index = 0;
@@ -31,7 +33,7 @@ public class AArrayList implements AList {
     }
 
     @Override
-    public AEnumerator getEnumerator() {
+    public Iterator iterator() {
         return new AArrayListEnumerator(this);
     }
 }
