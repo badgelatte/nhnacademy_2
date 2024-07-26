@@ -1,20 +1,20 @@
 class Node {
     Object data;
-    ANode nextNode;
+    Node nextNode;
 
     public Node(Object data) {
         this.data = data;
     }
 }
 
-public class LinkedList implements AList {
-    ANode head;
+public class LinkedList implements List {
+    Node head;
     int size;
 
     public LinkedList() {}
 
     public void add(Object item) {
-        ANode node = new ANode(item);
+        Node node = new Node(item);
         if (this.head == null) {
             this.head = node;
         }
@@ -28,7 +28,7 @@ public class LinkedList implements AList {
     }
 
     public Object get(int index) {
-        ANode current = this.head;
+        Node current = this.head;
         for (int i = 0; i < index; i++) {
             current = head.nextNode;
         }
@@ -39,8 +39,8 @@ public class LinkedList implements AList {
         return this.size;
     }
 
-    public AEnumerator getEnumerator() {
-        return new ALinkedListEnumerator(this);
+    public Enumerator getEnumerator() {
+        return new LinkedListEnumerator(this);
     }
 
     public boolean isEmpty() {

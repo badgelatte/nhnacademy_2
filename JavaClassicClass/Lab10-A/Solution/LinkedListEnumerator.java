@@ -1,8 +1,8 @@
-public class LinkedListEnumerator implements AEnumerator {
-    ALinkedList list;
+public class LinkedListEnumerator implements Enumerator {
+    LinkedList list;
     int index = 0;
     
-    public LinkedListEnumerator(ALinkedList list) {
+    public LinkedListEnumerator(LinkedList list) {
         this.list = list;
     }
 

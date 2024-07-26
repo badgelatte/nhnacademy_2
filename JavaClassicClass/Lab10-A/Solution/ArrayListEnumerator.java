@@ -1,8 +1,8 @@
-public class ArrayListEnumerator implements AEnumerator {
-    AArrayList list;
+public class ArrayListEnumerator implements Enumerator {
+    ArrayList list;
     int index = 0;
 
-    public ArrayListEnumerator(AArrayList list) {
+    public ArrayListEnumerator(ArrayList list) {
         this.list = list;
     }
 

@@ -1,4 +1,4 @@
-public interface List extends AEnumerable {
+public interface List extends Enumerable {
     void add(Object item);
     Object get(int index);
     int size();

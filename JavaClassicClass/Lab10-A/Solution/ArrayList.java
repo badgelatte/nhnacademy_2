@@ -1,4 +1,4 @@
-public class ArrayList implements AList {
+public class ArrayList implements List {
     private Object[] elements;
     private int index = 0;
 
@@ -15,8 +15,8 @@ public class ArrayList implements AList {
         return this.elements[index];
     }
 
-    public AEnumerator getEnumerator() {
-        return new AArrayListEnumerator(this);
+    public Enumerator getEnumerator() {
+        return new ArrayListEnumerator(this);
     }
 
     public int size() {

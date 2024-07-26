@@ -1,3 +1,3 @@
 public interface Enumerable {
-    public AEnumerator getEnumerator();
+    public Enumerator getEnumerator();
 }
