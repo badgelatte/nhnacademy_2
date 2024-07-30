@@ -1,30 +1,24 @@
-interface DoSomething{
-    public int doIt(int i);
-}
+import java.util.Comparator;
 
-class realClass implements DoSomething{
-    public int doIt(int end) {
-        int result = 0;
-        for(int i = 0; i <=end; i++) {
-            result += i;
-        }
-        return result;
+class NoComparator implements Comparator<Student> {
+    public int compare(Student s1, Student s2) {
+        return s1.no - s2.no;
+    }
+}
+class Student{
+    int no;
+    public Student(int no){
+        this.no = no;
     }
 }
 
 public class Lamdba {
-    // realClass 구현한 것과 동일
-    // DoSomething d1 = () -> 1;
-    // DoSomething d2 = () ->  {int x = 1; return x;};
-
-    // DoSomething d3 = (int i) -> {return i + 1;};
-
-    // 여기에 int와 () 생략 가능
-    DoSomething d4 = (int end) -> {
-        int result = 0;
-        for(int i = 0; i <=end; i++) {
-            result += i;
+    Comparator<Student> noComp = new Comparator<Student>() {
+        public int compare(Student s1, Student s2) {
+            return s1.no - s2.no;
         }
-        return result;
     };
+    Comparator<Student> comp1 = (s1, s2) -> s1.no = s2.no;
+
+    Comparator<Student> comp2 = new NoComparator();
 }
