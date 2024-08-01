@@ -1,4 +1,4 @@
-package practice;
+package Lab15_1.practice;
 
 public class PrintAccount{
     public void printAccount(BankAccount account) {

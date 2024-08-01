@@ -1,4 +1,4 @@
-package practice;
+package Lab15_1.practice;
 
 import java.math.BigDecimal;
 
