@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Array {
     public static void main(String[] args) {
         // 선언
@@ -30,5 +32,6 @@ public class Array {
         System.out.println("numbers.length: " + bools.length);
         System.out.println("numbers.length: " + doubles.length);
         System.out.println("numbers.length: " + objects.length);
+        System.out.println("numbers= " + Arrays.toString(numbers));
     }
 }
