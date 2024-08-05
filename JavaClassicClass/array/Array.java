@@ -2,6 +2,8 @@ public class Array {
     public static void main(String[] args) {
         // 선언
         int[] numbers;
+        // 다차원 배열
+        int[][] doubleNumbers;
         boolean[] bools;
         double[] doubles;
         Object[] objects;
@@ -14,6 +16,9 @@ public class Array {
         bools = new boolean[3];
         doubles = new double[4];
         objects = new Object[10];
+        doubleNumbers = new int[3][4];
+
+        doubleNumbers[0][1] = 1;
 
         // 이렇게 사용하고부터 고정됨
         System.out.println("numbers.length: " + numbers.length);
