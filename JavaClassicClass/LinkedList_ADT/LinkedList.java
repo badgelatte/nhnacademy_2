@@ -1,4 +1,7 @@
+import java.util.Iterator;
 import java.util.Objects;
+
+import list.ArrayList;
 
 public class LinkedList {
     Node head;
@@ -88,4 +91,28 @@ class Node {
     }
     
 
+}
+
+// List 상속받는 class들
+class Test{
+    public static void saveString(String s, List<String> list) {
+        list.add(s);
+    }
+    public static void main(String[] args) {
+
+        // ArrayList와 LinkedList 모두 List를 상속하기 때문에 saveString이 사용 가능하다
+        // List<String> list = new ArrayList();
+        List<String> list = new LinkedList();
+
+        saveString("Celine", list);
+
+        Iterator<String> iterator = list.iterator();
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        for(Iterator i: list) {
+            System.out.println(i);
+        }
+    }
 }
