@@ -18,7 +18,12 @@ public class Array {
         objects = new Object[10];
         doubleNumbers = new int[3][4];
 
-        doubleNumbers[0][1] = 1;
+        short sindex = 1;
+        int index = 1;
+        long lindex = 1;
+
+        // long인 lindex를 []안에 넣으면 오류 남
+        doubleNumbers[index][sindex] = 1;
 
         // 이렇게 사용하고부터 고정됨
         System.out.println("numbers.length: " + numbers.length);
