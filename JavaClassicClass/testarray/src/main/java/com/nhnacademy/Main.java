@@ -15,7 +15,9 @@ public class Main {
 
         System.out.println("numbers= " + Arrays.toString(numbers));
         System.out.println("objects= " + Arrays.toString(objects));
-        System.out.println("objects= " + Arrays.toString(doubleNum));
-        System.out.println("objects= " + Arrays.toString(doubleNum2));
+        System.out.println("doubleNum= " + Arrays.toString(doubleNum));
+        System.out.println("doubleNum2= " + Arrays.toString(doubleNum2));
+        System.out.println("numbers's length = " + numbers.length);
+        System.out.println("doubleNum's length = " + doubleNum.length + ", doubleNum2's length = " + doubleNum2.length);
     }
 }
