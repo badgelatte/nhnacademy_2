@@ -212,22 +212,36 @@ public class ArrayUtil{
         */
     }
 
-    public static int[] arraycopy(int[] src, int srcPos, int[] dest, int destPos, int size) {
+    public static void arraycopy(int[] src, int srcPos, int[] dest, int destPos, int size) {
         check(src);
         check(dest);
-        if(srcPos + size > src.length) {
+        if(srcPos + size > src.length || srcPos + size > dest.length) {
             throw new ArrayIndexOutOfBoundsException();
         }
-        int[] array = dest.clone();
 
-        for (int i = srcPos; i < srcPos+size; i++) {
-            if(Objects.equals(src, dest)) {
-                dest[destPos++] = array[i];
-            } else {
-                dest[destPos++] = src[i];
+        if(srcPos <= destPos){
+            for(int i = destPos+size-1; i >= destPos ;i--) {
+                dest[i] = src[srcPos--+size-1];
             }
+        } else {
+            for(int i = srcPos; i < srcPos+size; i++) {
+                dest[destPos++] = src[i]; 
+
+            } 
         }
-        return dest;
+        
+
+        // 배열 선언하지 않고 만들어야하기에 위와 같은 방식으로 새로 만들었다
+        // int[] array = dest.clone();
+
+        // for (int i = srcPos; i < srcPos+size; i++) {
+        //     if(Objects.equals(src, dest)) {
+        //         dest[destPos++] = array[i];
+        //     } else {
+        //         dest[destPos++] = src[i];
+        //     }
+        // }
+        // return dest;
     }
 
     public static double innerProduct(double[] x, double[] y) {
@@ -318,30 +332,30 @@ public class ArrayUtil{
         arraycopy(dest, 2, dest, 0, 8);
         System.out.printf("dest6 = %s%n", Arrays.toString(dest));
 
-        double[] x = {1.1, 2.2, 3.3, 4.4, 5.5};
-        // double[] y = {1.1, 2.2, 3.3, 4.4, 5.5};
-        double[] y = {6.6, 7.7, 8.8, 9.9};
-        System.out.println(innerProduct(x, y));
+        // double[] x = {1.1, 2.2, 3.3, 4.4, 5.5};
+        // // double[] y = {1.1, 2.2, 3.3, 4.4, 5.5};
+        // double[] y = {6.6, 7.7, 8.8, 9.9};
+        // System.out.println(innerProduct(x, y));
 
-        double[][] outers = outerProduct(x, y);
-        for (int i = 0; i < outers.length; i++) {
-            System.out.println(Arrays.toString(outers[i]));
-        }
-        System.out.println();
+        // double[][] outers = outerProduct(x, y);
+        // for (int i = 0; i < outers.length; i++) {
+        //     System.out.println(Arrays.toString(outers[i]));
+        // }
+        // System.out.println();
 
-        double[][] x1 = {{1.1, 1.2, 1.3},{2.1, 2.2, 2.3},{3.1, 3.2, 3.3}};
-        double[][] y1 = {{4.1, 4.2, 4.3},{5.1, 5.2, 5.3},{6.1, 6.2, 6.3}};
-        double[][] products = product(x1, y1);
-        for (int i = 0; i < products.length; i++) {
-            System.out.println(Arrays.toString(products[i]));
-        }
-        System.out.println();
+        // double[][] x1 = {{1.1, 1.2, 1.3},{2.1, 2.2, 2.3},{3.1, 3.2, 3.3}};
+        // double[][] y1 = {{4.1, 4.2, 4.3},{5.1, 5.2, 5.3},{6.1, 6.2, 6.3}};
+        // double[][] products = product(x1, y1);
+        // for (int i = 0; i < products.length; i++) {
+        //     System.out.println(Arrays.toString(products[i]));
+        // }
+        // System.out.println();
 
-        double[][] z = {{1.1, 1.2, 1.3},{2.1, 2.2, 2.3}};
+        // double[][] z = {{1.1, 1.2, 1.3},{2.1, 2.2, 2.3}};
 
-        double[][] ta = transpose(z);
-        for (int i = 0; i < ta.length; i++) {
-            System.out.println(Arrays.toString(ta[i]));
-        }
+        // double[][] ta = transpose(z);
+        // for (int i = 0; i < ta.length; i++) {
+        //     System.out.println(Arrays.toString(ta[i]));
+        // }
     }
 }
