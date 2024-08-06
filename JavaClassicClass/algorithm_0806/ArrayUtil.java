@@ -175,6 +175,18 @@ public class ArrayUtil{
             // System.out.println(random1 + " " + random2);
             // System.out.println(Arrays.toString(a));
         }
+
+        /* 
+        Random random = new Random();
+        for (int i = 0; i < a.length; i++) {
+            int index1 = random.nextInt(a.length);
+            int index2 = random.nextInt(a.length);
+
+            int temp = a[index2];
+            a[index2] = a[index1];
+            a[index1] = temp;
+        }
+        */
     }
 
     public static int[] tally(String msg) {
@@ -190,6 +202,14 @@ public class ArrayUtil{
             result[msgs[i]-65]++;
         }
         return result;
+
+        /* 
+        int[] results = new int[26];
+        String lowerCase = msg.toLowerCase();
+        for (int i = 0; i < msgs.length; i++) {
+            results[lowerCase.charAt(i)-'a']++;
+        }
+        */
     }
 
     public static int[] arraycopy(int[] src, int srcPos, int[] dest, int destPos, int size) {
