@@ -41,8 +41,8 @@ public class LinkedQueue implements Queue{
     public int dequeue() {
         int data = elements[front];
         elements[front++] = 0;
-        if(front >= capacity) {
-            elements = Arrays.copyOfRange(elements, capacity, rear-front);
+        if(front > capacity) {
+            elements = Arrays.copyOfRange(elements, capacity, capacity+rear-front);
             front -= capacity;
             rear -= capacity;
         }
@@ -74,7 +74,7 @@ public class LinkedQueue implements Queue{
         return result += "]";
     }
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         Queue queue = new LinkedQueue();
 
         System.out.println("queue : " + queue);
@@ -98,6 +98,29 @@ public class LinkedQueue implements Queue{
         System.out.println("queue : " + queue);
         queue.dequeue();
         System.out.println("queue : " + queue);
+    }
+
+    public static void main(String[] args) {
+        ArrayQueue queue = new ArrayQueue(2);
+        LinkedQueue circularQueue = new LinkedQueue(2);
+
+        System.out.printf("%10s | %10s | %10s | %10s | %10s | %10s%n",
+                "queue", "Capacity", "Elements", "circularQueue", "Capacity", "Elements");
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("%10s | %10d | %10s | %10s | %10d | %10s%n",
+                    "queue", queue.capacity, queue.toString(),
+                    "circularQueue", circularQueue.capacity, circularQueue.toString());
+            queue.enqueue(i);
+            circularQueue.enqueue(i);
+            System.out.printf("%10s | %10d | %10s | %10s | %10d | %10s%n",
+                    "queue", queue.capacity, queue.toString(),
+                    "circularQueue", circularQueue.capacity, circularQueue.toString());
+            queue.dequeue();
+            circularQueue.dequeue();
+        }
+        System.out.printf("%10s | %10d | %10s | %10s | %10d | %10s%n",
+                "queue", queue.capacity, queue.toString(),
+                "circularQueue", circularQueue.capacity, circularQueue.toString());
     }
 
 }
