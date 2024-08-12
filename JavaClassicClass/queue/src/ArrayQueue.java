@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 // 주석은 선생님 코드
@@ -5,15 +6,24 @@ public class ArrayQueue implements Queue{
     static final int DEFAULT_CAPACITY = 10;
     int front, rear;
     int[] elements;
+    int capacity;
 
     public ArrayQueue(){
-        elements = new int[DEFAULT_CAPACITY];
+        this(DEFAULT_CAPACITY);
+        }
+    
+    public ArrayQueue(int capacity) {
+        if(capacity <= 0) {
+            throw new IllegalArgumentException();
+        }
+        this.capacity = capacity;
+        elements = new int[capacity];
     }
 
     @Override
     public void enqueue(int element) {
-        if(rear == elements.length) {
-            rear = 0;
+        if(rear >= elements.length) {
+            elements = Arrays.copyOf(elements, elements.length + capacity);
         }
         elements[rear++] = element;
 
@@ -28,12 +38,7 @@ public class ArrayQueue implements Queue{
     @Override
     public int dequeue() {
         int data = elements[front];
-        elements[front] = 0;
-        if(front == elements.length) {
-            front = 0;
-        } else {
-            front++;
-        }
+        elements[front++] = 0;
         return data;
         /*
         if(front < rear) {
@@ -79,7 +84,15 @@ public class ArrayQueue implements Queue{
         */
     }
 
-    public static void main(String[] args) {
+    public int size(){
+        return rear - front;
+    }
+
+    public boolean isEmpty(){
+        return front == rear;
+    }
+
+    public static void main1(String[] args) {
         ArrayQueue q = new ArrayQueue();
         System.out.println("queue: " + q);
         q.enqueue(1);
@@ -113,5 +126,42 @@ public class ArrayQueue implements Queue{
             System.out.println("dequeue " + q + " : " + data);
         }
     }
+    public static void main(String[] args) {
+        ArrayQueue queue = new ArrayQueue(2);
+
+        System.out.printf("%15s | %7s | %4s | %s%n",
+                "Command", "isEmpty", "Size", "Elements");
+        queue.enqueue(1);
+        System.out.printf("%15s | %7s | %4d | %s%n", "queue.queue(1)",
+        queue.isEmpty(), queue.size(), queue.toString());
+        queue.enqueue(2);
+        System.out.printf("%15s | %7s | %4d | %s%n", "queue.queue(2)",
+        queue.isEmpty(), queue.size(), queue.toString());
+        queue.enqueue(3);
+        System.out.printf("%15s | %7s | %4d | %s%n", "queue.queue(3)",
+        queue.isEmpty(), queue.size(), queue.toString());
+        queue.enqueue(4);
+        System.out.printf("%15s | %7s | %4d | %s%n", "queue.queue(4)",
+        queue.isEmpty(), queue.size(), queue.toString());
+        queue.enqueue(5);
+        System.out.printf("%15s | %7s | %4d | %s%n", "queue.queue(5)",
+        queue.isEmpty(), queue.size(), queue.toString());
+        queue.dequeue();
+        System.out.printf("%15s | %7s | %4d | %s%n", "queue.dequeue()",
+        queue.isEmpty(), queue.size(), queue.toString());
+        queue.dequeue();
+        System.out.printf("%15s | %7s | %4d | %s%n", "queue.dequeue()",
+        queue.isEmpty(), queue.size(), queue.toString());
+        queue.dequeue();
+        System.out.printf("%15s | %7s | %4d | %s%n", "queue.dequeue()",
+        queue.isEmpty(), queue.size(), queue.toString());
+        queue.dequeue();
+        System.out.printf("%15s | %7s | %4d | %s%n", "queue.dequeue()",
+        queue.isEmpty(), queue.size(), queue.toString());
+        queue.dequeue();
+        System.out.printf("%15s | %7s | %4d | %s%n", "queue.dequeue()",
+        queue.isEmpty(), queue.size(), queue.toString());
+    }
+
     
 }
