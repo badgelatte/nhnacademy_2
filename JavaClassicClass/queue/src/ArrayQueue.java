@@ -92,6 +92,10 @@ public class ArrayQueue implements Queue{
         return front == rear;
     }
 
+    public int getCapacity(){
+        return elements.length;
+    }
+
     public static void main1(String[] args) {
         ArrayQueue q = new ArrayQueue();
         System.out.println("queue: " + q);
