@@ -2,7 +2,6 @@ public class ArrayStack implements Stack{
     int[] array;
     static final int DEFAULT_INCREMENT_SIZE = 10;
     int top = -1;
-    int capacity;
     int how;
 
     public ArrayStack() {
@@ -13,7 +12,6 @@ public class ArrayStack implements Stack{
     }
 
     public ArrayStack(int capacity, int how) {
-        this.capacity = capacity;
         this.how = how;
         array = new int[capacity];
     }
