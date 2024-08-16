@@ -26,10 +26,16 @@ public class TestTree {
         bst.insert(60);
         bst.insert(10);
         bst.insert(45);
+        bst.insert(15);
         bst.insert(100);
         bst.insert(35);
 
         System.out.println(bst.search(30));
         System.out.println("root: " + bst);
+
+        System.out.println(bst.toDFS(false));
+        System.out.println(bst.toDFS(true));
+        System.out.println(bst.toBFS(false));
+        System.out.println(bst.toBFS(true));
     }
 }

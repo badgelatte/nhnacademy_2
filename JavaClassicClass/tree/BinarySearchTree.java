@@ -1,3 +1,8 @@
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class BinarySearchTree<V extends Comparable<V>> {
     class Node<T extends Comparable<T>> {
         T item;
@@ -101,6 +106,70 @@ public class BinarySearchTree<V extends Comparable<V>> {
         }
         return null;
     }
+
+    // 깊이 우선 탐색
+    public List<V> toDFS(boolean reverse){
+        List<V> list = new LinkedList<>();
+        toDFS(list, root, reverse);
+        return list;
+    }
+
+    public void toDFS(List<V> list, Node<V> root, boolean reverse) {
+        if (root!=null) {
+            if(!reverse) {
+                if(root.left != null) {
+                    toDFS(list, root.left, reverse);
+                }
+                list.add(root.item);
+                if(root.right != null) {
+                    toDFS(list, root.right, reverse);
+                }
+            } else {
+                if(root.right != null) {
+                    toDFS(list, root.right, reverse);
+                }
+                list.add(root.item);
+                if(root.left != null) {
+                    toDFS(list, root.left, reverse);
+                }
+            }
+        }
+    }
+
+    // 넓이 우선 탐색
+    public List<V> toBFS(boolean reverse){
+        List<V> list = new LinkedList<>();
+        Queue<Node<V>> queue = new LinkedList<>();
+
+        if(root != null) {
+            queue.add(root);
+        }
+        
+        while(!queue.isEmpty()) {
+            if(!reverse) {
+                Node<V> node = queue.poll();
+                if(node.left != null) {
+                    queue.add(node.left);
+                }
+                if(node.right != null) {
+                    queue.add(node.right);
+                }
+                list.add(node.item);
+            } else {
+                Node<V> node = queue.poll();
+                if(node.right != null) {
+                    queue.add(node.right);
+                }
+                if(node.left != null) {
+                    queue.add(node.left);
+                }
+                list.add(node.item);
+            }
+        }
+
+        return list;
+    }
+    
 
     @Override
     public String toString(){
