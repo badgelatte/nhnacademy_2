@@ -27,6 +27,30 @@ public class Ball {
     public int getY(){
         return y;
     }
+    
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getMinX(){
+        return x - radius;
+    }
+
+    public int getMinY(){
+        return y - radius;
+    }
+
+    public int getMaxX(){
+        return x + radius;
+    }
+
+    public int getMaxY(){
+        return y + radius;
+    }
 
     public int getRadius() {
         return radius;
@@ -35,7 +59,6 @@ public class Ball {
     public String toString(){
         return "(" + x + ", " + y + ", " + radius + ")";
     }
-    
 }
 
     
