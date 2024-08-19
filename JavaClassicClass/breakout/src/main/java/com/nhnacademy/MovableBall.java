@@ -2,6 +2,9 @@ package com.nhnacademy;
 
 import java.awt.Color;
 
+/*
+ * 그림이 가로, 세로 얼마나 움직이는가를 설정하는 class
+ */
 public class MovableBall extends PaintableBall {
     int dx;
     int dy;
