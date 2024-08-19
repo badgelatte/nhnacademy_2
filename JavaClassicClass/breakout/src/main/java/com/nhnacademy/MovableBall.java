@@ -31,7 +31,9 @@ public class MovableBall extends PaintableBall {
     }
 
     public void move(){
+        System.out.printf("(%d %d) -> %n", getX(), getY());
         moveTo(getX() + dx, getY() + dy);
+        System.out.printf("(%d %d) -> %n", getX(), getY());
     }
 
     public void moveTo(int x, int y) {
