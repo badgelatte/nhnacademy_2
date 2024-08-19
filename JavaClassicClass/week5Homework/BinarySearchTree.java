@@ -47,6 +47,7 @@ public class BinarySearchTree<K extends Comparable<K>, V extends Comparable<V>>{
         }
     }
     
+    // K,V 다른 이름으로 static으로 정의하라?
     class Entry<K extends Comparable<K>,V extends Comparable<V>>{
         K key;
         V value;
@@ -144,6 +145,7 @@ public class BinarySearchTree<K extends Comparable<K>, V extends Comparable<V>>{
 
                 if(node.left != null && node.right != null) {
                     Node<Entry<K,V>> nodeRight = node.right;
+                    // node 변수에 node.left를 넣는다고 선택된 node가 삭제되는건 아니다
                     node = node.left;
                     while(node.right != null) {
                         node = node.right;
@@ -152,6 +154,8 @@ public class BinarySearchTree<K extends Comparable<K>, V extends Comparable<V>>{
                     size--;
                     
                 } else if(node.left == null) {
+                    // 왜 노란색일까?
+                    // 쓰는데가 없다 -> return이 있으면 관여가 안되서 넣나 안넣나 똑같다 => 코드가 제대로 안 만들어진거다
                     node = node.left;
                     size--;
     
@@ -240,9 +244,10 @@ public class BinarySearchTree<K extends Comparable<K>, V extends Comparable<V>>{
         if(root != null) {
             queue.add(root);
         }
+        // 조건문 안에 있어도 도리거 같음
         while(!queue.isEmpty()) {
+            Node<Entry<K,V>> node = queue.poll(); // ㅇㅣ걸 while문 밑으로 옮겨라(if문 밖으로 옮겨라)
             if(!reverse) {
-                Node<Entry<K,V>> node = queue.poll();
                 if(node.left!= null) {
                     queue.add(node.left);
                 }
@@ -251,7 +256,7 @@ public class BinarySearchTree<K extends Comparable<K>, V extends Comparable<V>>{
                 }
                 list.add(node.item);
             } else {
-                Node<Entry<K,V>> node = queue.poll();
+                // Node<Entry<K,V>> node = queue.poll();
                 if(node.right!= null) {
                     queue.add(node.right);
                 }
