@@ -1,5 +1,8 @@
 package com.nhnacademy;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class BoundedWorld extends MovableWorld {
 
     public boolean outOfBounds(Bounded bounded) {
@@ -27,6 +30,8 @@ public class BoundedWorld extends MovableWorld {
     public void move() {
         super.move();
 
+        Set<Bounded> breaks = new HashSet<>();
+        
         for (int i = 0; i < getCount(); i++) {
             Bounded bounded = get(i);
 
@@ -41,10 +46,17 @@ public class BoundedWorld extends MovableWorld {
 
                         if (bounded.getBounds().intersects(other.getBounds())) {
                             ((Movable) bounded).bounce(other);
+                            if(other instanceof Breakable) {
+                                breaks.add(other);
+                            }
                         }
                     }
                 }
             }
+        }
+
+        for (Bounded bounded : breaks) {
+            remove(bounded);
         }
     }
 }
