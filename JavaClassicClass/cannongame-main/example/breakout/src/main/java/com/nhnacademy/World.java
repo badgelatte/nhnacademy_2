@@ -27,8 +27,8 @@ public class World extends JPanel {
         boundedList.add(bounded);
     }
 
-    public void remove(Ball ball) {
-        boundedList.remove(ball);
+    public void remove(Bounded bounded) {
+        boundedList.remove(bounded);
     }
 
     public void remove(int index) {
@@ -47,10 +47,12 @@ public class World extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
 
-        for (Bounded bounded : boundedList) {
-            if (bounded instanceof Paintable) {
-                ((Paintable) bounded).paint(g);
+        // synchronized(boundedList) {
+            for (Bounded bounded : boundedList) {
+                if (bounded instanceof Paintable) {
+                    ((Paintable) bounded).paint(g);
+                }
             }
-        }
+        // }
     }
 }
