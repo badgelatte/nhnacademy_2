@@ -1,6 +1,9 @@
 package com.nhnacademy;
 
 import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +15,31 @@ public class World extends JPanel {
     public World() {
         super();
         boundedList = new ArrayList<>();
+        addMouseMotionListener(new MouseMotionListener(){
+            @Override
+            public void mouseDragged(MouseEvent e) {
+            }
+    
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                System.out.printf("Mouse : %d, %d%n", e.getX(), e.getY());
+            }
+    
+        });
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.printf("Mouse clicked%n");
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent var1) {
+                System.out.printf("Mouse : %d, %d%n", var1.getX(), var1.getY());
+            }
+        });
     }
+
+    
 
     public void add(Bounded bounded) {
         if (bounded == null) {
