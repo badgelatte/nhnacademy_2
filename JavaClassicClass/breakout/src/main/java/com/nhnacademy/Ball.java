@@ -1,6 +1,8 @@
 package com.nhnacademy;
 
-public class Ball {
+import java.awt.Rectangle;
+
+public class Ball implements Bounded{
     int x;
     int y;
     int radius;
@@ -54,6 +56,18 @@ public class Ball {
 
     public int getRadius() {
         return radius;
+    }
+
+    public int getWidth(){
+        return 2 * radius;
+    }
+
+    public int getHeight(){
+        return 2 * radius;
+    }
+
+    public Rectangle getBounds(){
+        return new Rectangle(getMinX(), getMinY(), getWidth(), getHeight());
     }
 
     public String toString(){
