@@ -12,7 +12,7 @@ public class Ball implements Bounded {
                 || ((long) x - radius < Integer.MIN_VALUE)
                 || ((long) y + radius > Integer.MAX_VALUE)
                 || ((long) y - radius < Integer.MIN_VALUE)) {
-            throw new IllegalArgumentException("볼이 공간을 벗어 납니다.");
+            throw new IllegalArgumentException(String.format("볼이 공간을 벗어 납니다,{},{},{}",x, y, radius));
         }
 
         if (radius < 0) {
